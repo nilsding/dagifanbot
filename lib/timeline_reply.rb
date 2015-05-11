@@ -7,7 +7,7 @@ Twittbot::BotPart.new :follow_users do
     next unless @config[:users].include? tweet.user.screen_name.downcase  # ignore every other user except our very special ones 😍
     count += 1  # increase tweet count
     puts "-- count = #{count % 12}"
-    next unless count % 12 == 0  # reply to every twelvth tweet in our timeline
+    next if count % 12 == 0  # reply to every twelvth tweet in our timeline
     
     # finally, reply with something from the :replies list and replace every %s with the users' "real" name
     puts "-- tweet!"
