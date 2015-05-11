@@ -1,4 +1,4 @@
-Twittbot::BotPart.new :follow_users do
+Twittbot::BotPart.new :timeline_reply do
   count = 0
   
   on :tweet do |tweet, opts|
